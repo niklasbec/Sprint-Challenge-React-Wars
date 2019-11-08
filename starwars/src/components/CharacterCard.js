@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+import styled from 'styled-components'
 // name={character.name}
 //                     birthYear={character.birth_year}
 //                     gender={characters.gender}
@@ -10,13 +10,25 @@ import React, { useState, useEffect } from 'react';
 //                     homeworld={characters.homeworld}
 //                     films={characters.films}
 
+const NameHeading = styled.h2`
+`
+const CharacterDiv = styled.div`
+      background: linear-gradient(to right bottom, #ff0099, #493240);
+      width: 18rem;
+      margin: 4rem 2rem;
+      padding: 1rem;
+      border-radius: 5%;
+`
+
+
+
 
 const CharacterCard = props => {
     return(
-        <div className ='characer-card'>
-            <h2>
+        <CharacterDiv>
+            <NameHeading>
                 {props.name}
-            </h2>
+            </NameHeading>
             <p>
                 Born: {props.birthYear}<br />
                 Gender: {props.gender}<br />
@@ -25,7 +37,7 @@ const CharacterCard = props => {
                 HairColor: {props.hairColor}<br />
                 SkinColor: {props.skinColor}<br />
             </p>
-        </div>
+        </CharacterDiv>
     )
 }
 

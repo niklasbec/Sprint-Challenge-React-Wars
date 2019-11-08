@@ -1,9 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import CharacterCard from './CharacterCard'
+import styled from 'styled-components'
+
 
 const Characters = () => {
     const [characters, setCharacters] = useState([])
+
+const FlexDiv = styled.div`
+display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+`
 
     useEffect(() => {
         
@@ -18,7 +26,7 @@ const Characters = () => {
         }, [])
 
     return (
-        <div>
+        <FlexDiv>
             {
             characters.map(character => {
                 return (
@@ -30,13 +38,11 @@ const Characters = () => {
                     mass={character.mass}
                     hairColor={character.hair_color}
                     skinColor={character.skin_color}
-                    homeworld={characters.homeworld}
-                    films={characters.films}
                 />
                 )
             })
             }
-        </div>
+        </FlexDiv>
     );
     }
 
